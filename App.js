@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
 });
 
 */
+/*
 import React from "react";
 import { View } from "react-native";
 import Expo from "expo";
@@ -145,8 +146,8 @@ const App = () => {
 };
 
 export default App;
-
-/*
+*/
+/* 
 import React, { useRef, useEffect } from "react";
 import { View } from "react-native";
 import { GLView } from "expo-gl";
@@ -217,5 +218,58 @@ const App = () => {
   );
 };
 
+/*
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import ThreeJSComponent from "./ThreeJSComponent";
+
+const App = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      <ThreeJSComponent />
+      <View style={{ position: "absolute", bottom: 170, left: 0, right: 0, alignItems: "center" }}>
+        <TouchableOpacity style={{ backgroundColor: "#CC4488", padding: 15, borderRadius: 5 }}>
+          <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>Get Started</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={{ position: "absolute", top: -50, left: 0, right: 0, bottom: 420, justifyContent: "center", alignItems: "center" }}>
+      <Text style={{ fontSize: 48, fontWeight: "bold", color: "#ffffff" }}>RecycleAi</Text>
+        <View style={{ marginTop: 10 }}>
+        <Text style={{ fontSize: 20, fontWeight: "bold", color: "#ffffff" }}>Technology for a Cleaner Future</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
 export default App;
-*/
+*/ 
+
+
+import React from "react";
+import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import ThreeJSComponent from "./ThreeJSComponent";
+
+const App = () => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        <ThreeJSComponent />
+        <View style={{ position: "absolute", bottom: 570, left: 0, right: 0, paddingTop: 50 }}>
+          <Text style={{ fontSize: 48, fontWeight: "bold", color: "#ffffff", textAlign: "center" }}>RecycleAi</Text>
+          <View style={{ marginTop: 10 }}>
+            <Text style={{ fontSize: 16, fontWeight: "bold", color: "#ffffff", textAlign: "center" }}>Technology towards a Cleaner Future</Text>
+          </View>
+        </View>
+        <View style={{ position: "absolute", bottom: 120, left: 0, right: 0, paddingBottom: 20 }}>
+          <TouchableOpacity style={{ backgroundColor: "#CC4488", padding: 15, borderRadius: 5, alignSelf: "center" }}>
+            <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>Get Started</Text>
+          </TouchableOpacity>
+          <Text style={{ color: "white", fontSize: 20, fontWeight: "bold" , marginTop: 10, textAlign: "center" }}>Click the button get started!</Text>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default App;

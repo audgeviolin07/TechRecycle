@@ -1,3 +1,4 @@
+"""
 # Resource and key
 import azure.ai.vision as sdk
 import os
@@ -54,3 +55,4 @@ def analyzeFileReturn(localfile):
 analyzeFilePrint("recyclables30.jpg")
 print(analyzeFileReturn("recyclables30.jpg"))
 
+"""
