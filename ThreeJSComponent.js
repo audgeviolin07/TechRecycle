@@ -36,7 +36,7 @@ const ThreeJSComponent = () => {
     // Create sphere
     const geometry = new SphereGeometry(15, 32, 16);
     const material = new MeshBasicMaterial({
-      color: 0xFF66AA, // Pink color
+      color: 0x00C5A8, // Pink color, turned green
       wireframe: true,
       wireframeLinewidth: 3,
     });
@@ -70,7 +70,7 @@ const ThreeJSComponent = () => {
 
     function addStar() {
       const geometry = new THREE.SphereGeometry(0.25);
-      const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+      const material = new THREE.MeshStandardMaterial({ color: 0xFFFF99 });
       const star = new THREE.Mesh(geometry, material);
 
       const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
