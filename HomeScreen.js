@@ -234,6 +234,26 @@ export default function App() {
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
   const cameraRef = useRef(null);
 
+  const logMessage = (message) => {
+    fetch('http://127.0.0.1:8000', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Message sent successfully');
+      })
+      .catch((error) => {
+        console.error('Error sending message:', error);
+      });
+  };
+  
+  // Usage example
+  logMessage('Hello from client!');
+
   useEffect(() => {
     (async () => {
       MediaLibrary.requestPermissionsAsync();
@@ -246,7 +266,29 @@ export default function App() {
     if (cameraRef) {
       try {
         const data = await cameraRef.current.takePictureAsync();
-        console.log(data["uri"]);//pass this to python
+        console.log(data.uri); // Log the URI for testing purposes
+  
+        // Send the URI to the FastAPI server
+        const uri = "your_uri_here";
+        fetch('http://127.0.0.1:8000', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ uri: uri })
+        })
+          .then(response => {
+            if (response.ok) {
+              console.log('URI sent successfully');
+            } else {
+              console.log('Failed to send URI to the server');
+            }
+          })
+          .catch(error => {
+            console.error('Error sending URI:', error);
+          });
+
+  
         setImage(data.uri);
       } catch (error) {
         console.log(error);

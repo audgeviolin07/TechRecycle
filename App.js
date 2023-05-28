@@ -353,7 +353,7 @@ const LaunchScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
       <ThreeJSComponent />
-      <View style={{ position: "absolute", bottom: 600, left: 0, right: 0, paddingTop: 50 }}>
+      <View style={{ position: "absolute", bottom: 590, left: 0, right: 0, paddingTop: 50 }}>
         <Text style={{ fontSize: 48, fontWeight: "bold", color: "#ffffff", textAlign: "center" }}>RecycleAi</Text>
         <View style={{ marginTop: 10 }}>
           <Text style={{ fontSize: 16, fontWeight: "bold", color: "#ffffff", textAlign: "center" }}>Technology towards a Cleaner Future</Text>
